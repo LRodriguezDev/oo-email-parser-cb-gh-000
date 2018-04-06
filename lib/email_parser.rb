@@ -14,6 +14,8 @@ class EmailParser
     splitted_array.collect do |email|
       if email.include? ","
         email.sub!(",", "")
+      else
+        email
       end
     end
   end
