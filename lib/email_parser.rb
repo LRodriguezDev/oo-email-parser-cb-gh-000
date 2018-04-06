@@ -11,12 +11,13 @@ class EmailParser
 
   def parse
     splitted_array = @emails_list.split(" ")
-    splitted_array.collect do |email|
+    splitted_array = splitted_array.collect do |email|
       if email.include? ","
         email.sub!(",", "")
       else
         email
       end
     end
+    splitted_array.uniq
   end
 end
